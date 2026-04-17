@@ -5,45 +5,85 @@
 /* Ezmarie design system — dark navy + red accent */
 @layer base {
   :root {
-    /* Ezmarie palette (dark by default) */
-    --background: 240 35% 14%;            /* #1a1a2e */
-    --foreground: 0 0% 98%;
-    --card: 240 30% 18%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 30% 18%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 349 80% 59%;               /* #e94560 */
+    /* Light mode */
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 91% 55%;               /* vibrant blue */
     --primary-foreground: 0 0% 100%;
-    --secondary: 240 25% 22%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 22% 22%;
-    --muted-foreground: 240 10% 70%;
-    --accent: 349 80% 59%;
+    --secondary: 220 14% 94%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 10% 40%;
+    --accent: 217 91% 55%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 240 20% 26%;
-    --input: 240 20% 26%;
-    --ring: 349 80% 59%;
+    --border: 220 13% 88%;
+    --input: 220 13% 88%;
+    --ring: 217 91% 55%;
     --radius: 0.85rem;
 
-    --surface-light: 0 0% 96%;            /* #f5f5f5 cards on light */
-    --surface-light-foreground: 240 35% 14%;
+    --surface-light: 220 14% 96%;
+    --surface-light-foreground: 222 47% 11%;
 
-    --gradient-hero: radial-gradient(ellipse at top, hsl(349 80% 59% / 0.18), transparent 60%),
-                     linear-gradient(180deg, hsl(240 35% 14%), hsl(240 35% 10%));
-    --gradient-accent: linear-gradient(135deg, hsl(349 80% 59%), hsl(349 90% 70%));
-    --shadow-glow: 0 10px 40px -10px hsl(349 80% 59% / 0.45);
-    --shadow-soft: 0 8px 30px -10px hsl(240 60% 5% / 0.5);
+    --gradient-hero: radial-gradient(ellipse at top, hsl(217 91% 55% / 0.18), transparent 60%),
+                     linear-gradient(180deg, hsl(0 0% 99%), hsl(220 20% 96%));
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 55%), hsl(199 89% 60%));
+    --shadow-glow: 0 10px 40px -10px hsl(217 91% 55% / 0.4);
+    --shadow-soft: 0 8px 30px -10px hsl(220 30% 30% / 0.15);
 
-    --sidebar-background: 240 30% 16%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 349 80% 59%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 20%;
+    --sidebar-primary: 217 91% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 25% 22%;
+    --sidebar-accent: 220 14% 94%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 88%;
+    --sidebar-ring: 217 91% 55%;
+  }
+
+  .dark {
+    --background: 222 35% 10%;
+    --foreground: 0 0% 98%;
+    --card: 222 30% 14%;
+    --card-foreground: 0 0% 98%;
+    --popover: 222 30% 14%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 25% 18%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 222 22% 18%;
+    --muted-foreground: 220 10% 70%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 20% 22%;
+    --input: 222 20% 22%;
+    --ring: 217 91% 60%;
+
+    --surface-light: 222 25% 16%;
+    --surface-light-foreground: 0 0% 95%;
+
+    --gradient-hero: radial-gradient(ellipse at top, hsl(217 91% 60% / 0.22), transparent 60%),
+                     linear-gradient(180deg, hsl(222 35% 10%), hsl(222 35% 7%));
+    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60%), hsl(199 89% 65%));
+    --shadow-glow: 0 10px 40px -10px hsl(217 91% 60% / 0.5);
+    --shadow-soft: 0 8px 30px -10px hsl(222 60% 3% / 0.6);
+
+    --sidebar-background: 222 30% 12%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 25% 18%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 240 20% 26%;
-    --sidebar-ring: 349 80% 59%;
+    --sidebar-border: 222 20% 22%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 

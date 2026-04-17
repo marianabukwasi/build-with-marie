@@ -8,6 +8,7 @@ import { ChatWorkspace } from "@/components/ChatWorkspace";
 import { ActivityLog } from "@/components/dashboard/ActivityLog";
 import { CreditsPanel } from "@/components/dashboard/CreditsPanel";
 import { SettingsPanel } from "@/components/dashboard/SettingsPanel";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { LogOut } from "lucide-react";
 
 const Dashboard = () => {
@@ -21,8 +22,9 @@ const Dashboard = () => {
           <MarieAvatar size={28} />
           <span className="text-base font-bold">Ezmarie</span>
         </Link>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <span className="hidden text-xs text-muted-foreground md:inline">{user?.email}</span>
+          <ThemeToggle />
           <Button variant="ghost" size="sm" onClick={signOut}>
             <LogOut className="mr-2 h-4 w-4" /> Sign out
           </Button>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MarieAvatar } from "@/components/MarieAvatar";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { MessageCircle, Rocket, Wrench } from "lucide-react";
 
 const features = [
@@ -17,9 +18,12 @@ const Landing = () => {
           <MarieAvatar size={36} />
           <span className="text-lg font-bold tracking-tight">Ezmarie</span>
         </div>
-        <Link to="/auth">
-          <Button variant="ghost" className="text-foreground hover:bg-secondary">Sign in</Button>
-        </Link>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link to="/auth">
+            <Button variant="ghost" className="text-foreground hover:bg-secondary">Sign in</Button>
+          </Link>
+        </div>
       </header>
 
       <main className="container flex flex-col items-center pt-16 pb-24 text-center">
