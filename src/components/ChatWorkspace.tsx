@@ -145,7 +145,7 @@ export const ChatWorkspace = () => {
   const noCredits = credits && (credits.daily <= 0 || credits.monthly <= 0);
 
   return (
-    <div className="grid h-full grid-cols-1 gap-4 lg:grid-cols-2">
+    <div className="grid h-full grid-cols-2 gap-4">
       {/* Chat */}
       <div className="flex h-full min-h-0 flex-col rounded-2xl border border-border bg-card shadow-soft">
         <div className="flex items-center justify-between border-b border-border px-5 py-3">
