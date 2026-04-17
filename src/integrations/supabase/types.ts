@@ -14,16 +14,201 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      activity_log: {
+        Row: {
+          action: string
+          created_at: string
+          description: string | null
+          id: string
+          site_id: string | null
+          status: Database["public"]["Enums"]["activity_status"]
+          user_id: string
+        }
+        Insert: {
+          action: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          site_id?: string | null
+          status?: Database["public"]["Enums"]["activity_status"]
+          user_id: string
+        }
+        Update: {
+          action?: string
+          created_at?: string
+          description?: string | null
+          id?: string
+          site_id?: string | null
+          status?: Database["public"]["Enums"]["activity_status"]
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "activity_log_site_id_fkey"
+            columns: ["site_id"]
+            isOneToOne: false
+            referencedRelation: "sites"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      conversations: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["message_role"]
+          site_id: string | null
+          user_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["message_role"]
+          site_id?: string | null
+          user_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["message_role"]
+          site_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "conversations_site_id_fkey"
+            columns: ["site_id"]
+            isOneToOne: false
+            referencedRelation: "sites"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      credit_transactions: {
+        Row: {
+          amount: number
+          created_at: string
+          description: string | null
+          id: string
+          type: Database["public"]["Enums"]["credit_txn_type"]
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          description?: string | null
+          id?: string
+          type: Database["public"]["Enums"]["credit_txn_type"]
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          description?: string | null
+          id?: string
+          type?: Database["public"]["Enums"]["credit_txn_type"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          created_at: string
+          credits_daily: number
+          credits_daily_reset: string
+          credits_monthly: number
+          credits_monthly_reset: string
+          email: string | null
+          id: string
+          onboarded: boolean
+          plan: Database["public"]["Enums"]["user_plan"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          credits_daily?: number
+          credits_daily_reset?: string
+          credits_monthly?: number
+          credits_monthly_reset?: string
+          email?: string | null
+          id?: string
+          onboarded?: boolean
+          plan?: Database["public"]["Enums"]["user_plan"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          credits_daily?: number
+          credits_daily_reset?: string
+          credits_monthly?: number
+          credits_monthly_reset?: string
+          email?: string | null
+          id?: string
+          onboarded?: boolean
+          plan?: Database["public"]["Enums"]["user_plan"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      sites: {
+        Row: {
+          business_name: string | null
+          business_type: string | null
+          created_at: string
+          id: string
+          site_url: string | null
+          status: Database["public"]["Enums"]["site_status"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          business_name?: string | null
+          business_type?: string | null
+          created_at?: string
+          id?: string
+          site_url?: string | null
+          status?: Database["public"]["Enums"]["site_status"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          business_name?: string | null
+          business_type?: string | null
+          created_at?: string
+          id?: string
+          site_url?: string | null
+          status?: Database["public"]["Enums"]["site_status"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      spend_credit: {
+        Args: { p_user_id: string }
+        Returns: {
+          allowed: boolean
+          credits_daily: number
+          credits_monthly: number
+        }[]
+      }
     }
     Enums: {
-      [_ in never]: never
+      activity_status: "completed" | "pending" | "flagged"
+      credit_txn_type: "daily_reset" | "monthly_reset" | "spend" | "purchase"
+      message_role: "user" | "assistant"
+      site_status: "building" | "live" | "paused"
+      user_plan: "free" | "solo" | "team"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +335,12 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      activity_status: ["completed", "pending", "flagged"],
+      credit_txn_type: ["daily_reset", "monthly_reset", "spend", "purchase"],
+      message_role: ["user", "assistant"],
+      site_status: ["building", "live", "paused"],
+      user_plan: ["free", "solo", "team"],
+    },
   },
 } as const
