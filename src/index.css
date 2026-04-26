@@ -2,111 +2,127 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Ezmarie — Neon Glassmorphism design system */
+/* Ezmarie — Indigo Aura design system (blue-led, pink CTA) */
 @layer base {
   :root {
-    /* Light mode — soft magenta + navy */
-    --background: 220 20% 98%;
-    --foreground: 222 47% 8%;
+    /* Light mode — soft indigo wash */
+    --background: 230 40% 98%;
+    --foreground: 230 50% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 8%;
+    --card-foreground: 230 50% 10%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 8%;
+    --popover-foreground: 230 50% 10%;
 
-    --primary: 330 85% 55%;               /* soft magenta */
+    /* Brand blue (matches existing ezmarie.vercel.app) */
+    --brand: 224 76% 55%;
+    --brand-foreground: 0 0% 100%;
+    --brand-deep: 235 60% 30%;
+    --brand-soft: 230 100% 88%;
+
+    /* Pink — reserved for primary CTA buttons */
+    --primary: 330 85% 58%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 330 100% 70%;
+    --primary-glow: 330 100% 72%;
 
-    --secondary: 220 16% 94%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 220 14% 94%;
-    --muted-foreground: 220 10% 40%;
+    --secondary: 230 25% 94%;
+    --secondary-foreground: 230 50% 12%;
+    --muted: 230 20% 95%;
+    --muted-foreground: 230 15% 42%;
 
-    --accent: 220 90% 25%;                /* navy */
+    --accent: 224 76% 55%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 200 95% 50%;
+    --accent-glow: 224 100% 70%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 13% 88%;
-    --input: 220 13% 88%;
-    --ring: 330 85% 55%;
+    --border: 230 25% 88%;
+    --input: 230 25% 88%;
+    --ring: 224 76% 55%;
     --radius: 1.25rem;
 
-    --glass-bg: 0 0% 100% / 0.55;
-    --glass-border: 220 30% 60% / 0.18;
+    --glass-bg: 0 0% 100% / 0.6;
+    --glass-border: 230 40% 60% / 0.18;
 
+    /* Signs-ai inspired indigo gradient wash */
     --gradient-mesh:
-      radial-gradient(at 20% 20%, hsl(330 100% 75% / 0.35) 0px, transparent 50%),
-      radial-gradient(at 80% 30%, hsl(200 95% 60% / 0.30) 0px, transparent 50%),
-      radial-gradient(at 60% 90%, hsl(280 90% 70% / 0.25) 0px, transparent 50%);
-    --gradient-accent: linear-gradient(135deg, hsl(330 85% 55%), hsl(220 90% 35%));
-    --gradient-text: linear-gradient(135deg, hsl(330 85% 45%), hsl(220 90% 25%));
+      radial-gradient(at 20% 0%, hsl(235 80% 70% / 0.45) 0px, transparent 55%),
+      radial-gradient(at 80% 10%, hsl(220 90% 70% / 0.35) 0px, transparent 55%),
+      radial-gradient(at 60% 100%, hsl(245 90% 80% / 0.30) 0px, transparent 55%);
+    --gradient-accent: linear-gradient(135deg, hsl(224 76% 55%), hsl(245 70% 55%));
+    --gradient-pink: linear-gradient(135deg, hsl(330 85% 58%), hsl(345 90% 65%));
+    --gradient-text: linear-gradient(135deg, hsl(235 60% 25%), hsl(224 76% 50%));
 
-    --shadow-glow: 0 0 40px hsl(330 100% 60% / 0.35);
-    --shadow-glow-cyan: 0 0 40px hsl(200 95% 55% / 0.35);
-    --shadow-soft: 0 8px 32px -10px hsl(220 30% 30% / 0.18);
+    --shadow-glow: 0 0 40px hsl(330 100% 60% / 0.40);
+    --shadow-glow-blue: 0 0 40px hsl(224 100% 60% / 0.30);
+    --shadow-soft: 0 8px 32px -10px hsl(230 50% 30% / 0.18);
 
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222 47% 20%;
-    --sidebar-primary: 330 85% 55%;
+    --sidebar-foreground: 230 50% 20%;
+    --sidebar-primary: 224 76% 55%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 94%;
-    --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 220 13% 88%;
-    --sidebar-ring: 330 85% 55%;
+    --sidebar-accent: 230 25% 94%;
+    --sidebar-accent-foreground: 230 50% 12%;
+    --sidebar-border: 230 25% 88%;
+    --sidebar-ring: 224 76% 55%;
   }
 
   .dark {
-    /* Dark mode — electric pink + deep cyan */
-    --background: 0 0% 2%;                /* #050505 */
-    --foreground: 0 0% 98%;
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 98%;
+    /* Dark mode — deep navy (matches ezmarie.vercel.app brand) */
+    --background: 230 40% 6%;
+    --foreground: 230 30% 96%;
+    --card: 230 35% 9%;
+    --card-foreground: 230 30% 96%;
+    --popover: 230 35% 9%;
+    --popover-foreground: 230 30% 96%;
 
-    --primary: 327 100% 50%;              /* #FF007F electric pink */
+    --brand: 224 90% 62%;
+    --brand-foreground: 0 0% 100%;
+    --brand-deep: 235 70% 50%;
+    --brand-soft: 224 80% 75%;
+
+    /* Pink CTA accent */
+    --primary: 330 90% 62%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 327 100% 65%;
+    --primary-glow: 330 100% 72%;
 
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
+    --secondary: 230 30% 14%;
+    --secondary-foreground: 230 30% 96%;
+    --muted: 230 25% 15%;
+    --muted-foreground: 230 20% 70%;
 
-    --accent: 184 100% 50%;               /* #00F5FF deep cyan */
-    --accent-foreground: 0 0% 5%;
-    --accent-glow: 184 100% 65%;
+    --accent: 224 90% 62%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 224 100% 75%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 14%;
-    --input: 0 0% 14%;
-    --ring: 327 100% 50%;
+    --border: 230 25% 18%;
+    --input: 230 25% 18%;
+    --ring: 224 90% 62%;
 
-    --glass-bg: 0 0% 100% / 0.04;
-    --glass-border: 0 0% 100% / 0.08;
+    --glass-bg: 230 50% 100% / 0.04;
+    --glass-border: 230 80% 80% / 0.10;
 
     --gradient-mesh:
-      radial-gradient(at 18% 22%, hsl(327 100% 50% / 0.30) 0px, transparent 50%),
-      radial-gradient(at 82% 28%, hsl(184 100% 50% / 0.25) 0px, transparent 50%),
-      radial-gradient(at 50% 90%, hsl(280 100% 60% / 0.22) 0px, transparent 55%);
-    --gradient-accent: linear-gradient(135deg, hsl(327 100% 50%), hsl(184 100% 50%));
-    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(184 100% 75%));
+      radial-gradient(at 18% 0%, hsl(235 90% 50% / 0.45) 0px, transparent 55%),
+      radial-gradient(at 82% 10%, hsl(220 95% 55% / 0.35) 0px, transparent 55%),
+      radial-gradient(at 50% 100%, hsl(245 90% 60% / 0.30) 0px, transparent 60%);
+    --gradient-accent: linear-gradient(135deg, hsl(224 90% 62%), hsl(245 80% 65%));
+    --gradient-pink: linear-gradient(135deg, hsl(330 90% 62%), hsl(345 95% 68%));
+    --gradient-text: linear-gradient(135deg, hsl(0 0% 100%), hsl(224 90% 80%));
 
-    --shadow-glow: 0 0 60px hsl(327 100% 50% / 0.45);
-    --shadow-glow-cyan: 0 0 60px hsl(184 100% 50% / 0.40);
-    --shadow-soft: 0 8px 40px -10px hsl(0 0% 0% / 0.6);
+    --shadow-glow: 0 0 60px hsl(330 90% 62% / 0.50);
+    --shadow-glow-blue: 0 0 60px hsl(224 90% 62% / 0.40);
+    --shadow-soft: 0 8px 40px -10px hsl(230 80% 2% / 0.7);
 
-    --sidebar-background: 0 0% 4%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 327 100% 50%;
+    --sidebar-background: 230 40% 7%;
+    --sidebar-foreground: 230 30% 95%;
+    --sidebar-primary: 224 90% 62%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 10%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 0 0% 14%;
-    --sidebar-ring: 327 100% 50%;
+    --sidebar-accent: 230 30% 14%;
+    --sidebar-accent-foreground: 230 30% 96%;
+    --sidebar-border: 230 25% 18%;
+    --sidebar-ring: 224 90% 62%;
   }
 }
 
@@ -125,6 +141,7 @@
 @layer utilities {
   .bg-mesh { background-image: var(--gradient-mesh); }
   .bg-accent-gradient { background: var(--gradient-accent); }
+  .bg-pink-gradient { background: var(--gradient-pink); }
   .text-gradient {
     background: var(--gradient-text);
     -webkit-background-clip: text;
@@ -132,7 +149,7 @@
     color: transparent;
   }
   .shadow-glow { box-shadow: var(--shadow-glow); }
-  .shadow-glow-cyan { box-shadow: var(--shadow-glow-cyan); }
+  .shadow-glow-blue { box-shadow: var(--shadow-glow-blue); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
 
   .glass {

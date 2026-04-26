@@ -4,26 +4,23 @@ import { Button } from "@/components/ui/button";
 import { MarieAvatar } from "@/components/MarieAvatar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AuraBackground } from "@/components/AuraBackground";
-import { Zap, Sparkles, Wrench, ArrowRight, Check } from "lucide-react";
+import { MessagesSquare, Rocket, ShieldCheck, ArrowRight, Check } from "lucide-react";
 
 const features = [
   {
-    icon: Zap,
-    title: "Lightning Speed",
-    desc: "Your site goes live in minutes, not months. Marie ships at the speed of thought.",
-    accent: "primary" as const,
+    icon: MessagesSquare,
+    title: "Just talk. No code.",
+    desc: "Describe your business in plain English. Marie writes, designs and ships your site — you never touch a line of code.",
   },
   {
-    icon: Sparkles,
-    title: "AI-Integration",
-    desc: "Built-in conversational intelligence. Marie connects, configures and adapts as you grow.",
-    accent: "accent" as const,
+    icon: Rocket,
+    title: "Live in minutes.",
+    desc: "Hosting, domain, SEO, forms, payments. Marie wires it all up the moment you're ready to launch.",
   },
   {
-    icon: Wrench,
-    title: "Forever Maintained",
-    desc: "Updates, edits, fixes — handled. Marie keeps your site fresh, secure and on-brand, every day.",
-    accent: "primary" as const,
+    icon: ShieldCheck,
+    title: "Maintained forever.",
+    desc: "Marie watches your site 24/7 — fixing, updating, refreshing copy and images so it always feels brand new.",
   },
 ];
 
@@ -47,12 +44,12 @@ const Landing = () => {
           <div className="glass flex items-center justify-between rounded-2xl px-4 py-3">
             <div className="flex items-center gap-2.5">
               <MarieAvatar size={32} />
-              <span className="text-base font-bold tracking-tight">Ezmarie</span>
+              <span className="text-base font-bold tracking-tight">EZMARIE</span>
             </div>
             <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
-              <a href="#process" className="transition-colors hover:text-foreground">Process</a>
+              <a href="#how" className="transition-colors hover:text-foreground">How it works</a>
               <a href="#showcase" className="transition-colors hover:text-foreground">Showcase</a>
-              <a href="#cta" className="transition-colors hover:text-foreground">Pricing</a>
+              <a href="#cta" className="transition-colors hover:text-foreground">Get started</a>
             </nav>
             <div className="flex items-center gap-2">
               <ThemeToggle />
@@ -72,44 +69,33 @@ const Landing = () => {
           animate="show"
           className="flex flex-col items-center text-center"
         >
-          <motion.span
-            variants={item}
-            className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-muted-foreground"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-            </span>
-            Meet Marie — the AI that builds websites
-          </motion.span>
-
           <motion.h1
             variants={item}
-            className="mt-8 text-5xl font-extrabold leading-[0.95] tracking-tighter sm:text-7xl md:text-8xl"
+            className="text-5xl font-extrabold leading-[0.95] tracking-tighter sm:text-7xl md:text-8xl"
           >
-            <span className="block">We Build Your</span>
-            <span className="text-gradient block">Perfect Website.</span>
+            <span className="block">The perfect website,</span>
+            <span className="text-gradient block">built &amp; maintained for you.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
             className="mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg"
           >
-            A premium AI web developer for small businesses. Talk to Marie — she designs,
-            ships, and maintains a site that actually wins customers.
+            Ezmarie is your AI web developer. One conversation, one place — Marie builds,
+            launches and looks after your website forever. No code. No agencies. No upkeep.
           </motion.p>
 
           <motion.div variants={item} className="mt-10 flex flex-col items-center gap-3 sm:flex-row">
             <Link to="/auth">
               <Button
                 size="lg"
-                className="glow-pulse h-14 rounded-full bg-accent-gradient px-8 text-base font-semibold text-primary-foreground hover:opacity-95"
+                className="glow-pulse h-14 rounded-full bg-pink-gradient px-8 text-base font-semibold text-primary-foreground hover:opacity-95"
               >
-                Get Started
+                Start building free
                 <ArrowRight className="ml-1 h-4 w-4" />
               </Button>
             </Link>
-            <a href="#process">
+            <a href="#how">
               <Button
                 size="lg"
                 variant="outline"
@@ -144,17 +130,17 @@ const Landing = () => {
               <div className="grid grid-cols-1 gap-4 p-6 sm:grid-cols-3">
                 <div className="sm:col-span-2">
                   <div className="text-xs font-medium uppercase tracking-widest text-primary">Boutique Florist</div>
-                  <div className="mt-2 text-2xl font-bold sm:text-3xl">Bloom & Petal Studio</div>
+                  <div className="mt-2 text-2xl font-bold sm:text-3xl">Bloom &amp; Petal Studio</div>
                   <div className="mt-2 text-sm text-muted-foreground">
-                    Hand-tied bouquets, weddings & weekly subscriptions in Brooklyn.
+                    Hand-tied bouquets, weddings &amp; weekly subscriptions in Brooklyn.
                   </div>
                   <div className="mt-4 flex gap-2">
-                    <span className="rounded-full bg-accent-gradient px-3 py-1 text-xs font-semibold text-primary-foreground">Order today</span>
+                    <span className="rounded-full bg-pink-gradient px-3 py-1 text-xs font-semibold text-primary-foreground">Order today</span>
                     <span className="glass rounded-full px-3 py-1 text-xs">Subscriptions</span>
                   </div>
                   <div className="mt-6 grid grid-cols-3 gap-2">
                     {[1, 2, 3].map((i) => (
-                      <div key={i} className="aspect-square rounded-xl bg-accent-gradient opacity-80" style={{ filter: `hue-rotate(${i * 30}deg)` }} />
+                      <div key={i} className="aspect-square rounded-xl bg-accent-gradient opacity-80" style={{ filter: `hue-rotate(${i * 20}deg)` }} />
                     ))}
                   </div>
                 </div>
@@ -177,7 +163,7 @@ const Landing = () => {
         </motion.section>
 
         {/* Bento grid */}
-        <section id="process" className="mt-32">
+        <section id="how" className="mt-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -185,10 +171,12 @@ const Landing = () => {
             transition={{ duration: 0.6 }}
             className="mx-auto max-w-2xl text-center"
           >
-            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The Perfect Process</div>
-            <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">Three things, done right.</h2>
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">How Ezmarie works</div>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+              Build &amp; maintain — in one place.
+            </h2>
             <p className="mt-4 text-muted-foreground">
-              Most agencies take months. Marie does it in minutes — and never stops improving your site.
+              You don't need a developer. You don't need a designer. You just need to talk to Marie.
             </p>
           </motion.div>
 
@@ -207,28 +195,14 @@ const Landing = () => {
               >
                 <div
                   className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full opacity-30 blur-3xl transition-opacity duration-300 group-hover:opacity-60"
-                  style={{
-                    background:
-                      f.accent === "primary"
-                        ? "hsl(var(--primary))"
-                        : "hsl(var(--accent))",
-                  }}
+                  style={{ background: "hsl(var(--accent))" }}
                 />
                 <div
                   className="relative mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl"
                   style={{
-                    background:
-                      f.accent === "primary"
-                        ? "hsl(var(--primary) / 0.15)"
-                        : "hsl(var(--accent) / 0.15)",
-                    color:
-                      f.accent === "primary"
-                        ? "hsl(var(--primary))"
-                        : "hsl(var(--accent))",
-                    boxShadow:
-                      f.accent === "primary"
-                        ? "0 0 30px hsl(var(--primary) / 0.35)"
-                        : "0 0 30px hsl(var(--accent) / 0.35)",
+                    background: "hsl(var(--accent) / 0.14)",
+                    color: "hsl(var(--accent))",
+                    boxShadow: "0 0 30px hsl(var(--accent) / 0.30)",
                   }}
                 >
                   <f.icon className="h-5 w-5" strokeWidth={2.2} />
@@ -255,15 +229,15 @@ const Landing = () => {
                 Your perfect website is <span className="text-gradient">one chat away.</span>
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-                No briefs. No designers. No deadlines. Just talk to Marie.
+                Built by Marie. Maintained by Marie. Owned by you.
               </p>
               <div className="mt-8 flex justify-center">
                 <Link to="/auth">
                   <Button
                     size="lg"
-                    className="glow-pulse h-14 rounded-full bg-accent-gradient px-10 text-base font-semibold text-primary-foreground hover:opacity-95"
+                    className="glow-pulse h-14 rounded-full bg-pink-gradient px-10 text-base font-semibold text-primary-foreground hover:opacity-95"
                   >
-                    Start Building Free
+                    Start building free
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Button>
                 </Link>
