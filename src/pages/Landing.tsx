@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MarieAvatar } from "@/components/MarieAvatar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AuraBackground } from "@/components/AuraBackground";
+import { SiteMarquee } from "@/components/SiteMarquee";
 import { MessagesSquare, Rocket, ShieldCheck, ArrowRight, Check } from "lucide-react";
 
 const features = [
@@ -106,59 +107,23 @@ const Landing = () => {
             </a>
           </motion.div>
 
-          {/* Glass mockup */}
+          {/* Hero showcase — tilted, perspective marquees */}
           <motion.div
             variants={item}
-            className="relative mt-20 w-full max-w-5xl"
+            className="relative mt-20 w-full"
             id="showcase"
+            style={{ perspective: "1400px" }}
           >
-            <div className="absolute -inset-4 rounded-[2rem] bg-accent-gradient opacity-30 blur-3xl" />
-            <div className="glass animate-float relative rounded-3xl p-3 shadow-soft">
-              {/* Browser chrome */}
-              <div className="flex items-center justify-between border-b border-border/40 px-4 py-3">
-                <div className="flex gap-1.5">
-                  <span className="h-2.5 w-2.5 rounded-full bg-primary/80" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-accent/80" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-muted-foreground/40" />
-                </div>
-                <div className="rounded-md bg-secondary/60 px-3 py-1 text-xs text-muted-foreground">
-                  bloom-florals.ezmarie.app
-                </div>
-                <span className="text-xs text-muted-foreground">Live</span>
-              </div>
-              {/* Mock site */}
-              <div className="grid grid-cols-1 gap-4 p-6 sm:grid-cols-3">
-                <div className="sm:col-span-2">
-                  <div className="text-xs font-medium uppercase tracking-widest text-primary">Boutique Florist</div>
-                  <div className="mt-2 text-2xl font-bold sm:text-3xl">Bloom &amp; Petal Studio</div>
-                  <div className="mt-2 text-sm text-muted-foreground">
-                    Hand-tied bouquets, weddings &amp; weekly subscriptions in Brooklyn.
-                  </div>
-                  <div className="mt-4 flex gap-2">
-                    <span className="rounded-full bg-pink-gradient px-3 py-1 text-xs font-semibold text-primary-foreground">Order today</span>
-                    <span className="glass rounded-full px-3 py-1 text-xs">Subscriptions</span>
-                  </div>
-                  <div className="mt-6 grid grid-cols-3 gap-2">
-                    {[1, 2, 3].map((i) => (
-                      <div key={i} className="aspect-square rounded-xl bg-accent-gradient opacity-80" style={{ filter: `hue-rotate(${i * 20}deg)` }} />
-                    ))}
-                  </div>
-                </div>
-                <div className="glass rounded-2xl p-4">
-                  <div className="text-xs font-semibold text-muted-foreground">This week</div>
-                  <div className="mt-2 text-3xl font-bold">+184%</div>
-                  <div className="text-xs text-muted-foreground">Bookings via site</div>
-                  <div className="mt-4 space-y-2">
-                    {["SEO synced", "Stripe live", "Domain attached"].map((t) => (
-                      <div key={t} className="flex items-center gap-2 text-xs">
-                        <Check className="h-3.5 w-3.5 text-accent" />
-                        <span>{t}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            <div className="pointer-events-none absolute -inset-x-10 -inset-y-6 rounded-[3rem] bg-accent-gradient opacity-25 blur-3xl" />
+            <div
+              className="relative space-y-5"
+              style={{ transform: "rotateX(14deg) rotateZ(-2deg)" }}
+            >
+              <SiteMarquee speed={50} compact />
+              <SiteMarquee speed={65} compact reverse />
             </div>
+            {/* Bottom fade into page */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-background" />
           </motion.div>
         </motion.section>
 
@@ -212,6 +177,32 @@ const Landing = () => {
               </motion.div>
             ))}
           </motion.div>
+        </section>
+
+        {/* Live showcase marquees */}
+        <section className="mt-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              Live from Marie
+            </div>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+              Sites built this week.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Real businesses. Real launches. All shipped through one conversation.
+            </p>
+          </motion.div>
+
+          <div className="relative -mx-4 mt-12 space-y-5 sm:-mx-8">
+            <SiteMarquee speed={55} />
+            <SiteMarquee speed={70} reverse />
+          </div>
         </section>
 
         {/* CTA */}
