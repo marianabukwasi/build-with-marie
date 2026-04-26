@@ -141,6 +141,7 @@
 @layer utilities {
   .bg-mesh { background-image: var(--gradient-mesh); }
   .bg-accent-gradient { background: var(--gradient-accent); }
+  .bg-pink-gradient { background: var(--gradient-pink); }
   .text-gradient {
     background: var(--gradient-text);
     -webkit-background-clip: text;
@@ -148,7 +149,7 @@
     color: transparent;
   }
   .shadow-glow { box-shadow: var(--shadow-glow); }
-  .shadow-glow-cyan { box-shadow: var(--shadow-glow-cyan); }
+  .shadow-glow-blue { box-shadow: var(--shadow-glow-blue); }
   .shadow-soft { box-shadow: var(--shadow-soft); }
 
   .glass {

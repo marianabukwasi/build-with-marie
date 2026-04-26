@@ -15,7 +15,7 @@ export const ThemeToggle = () => {
       <motion.div
         layout
         transition={{ type: "spring", stiffness: 500, damping: 30 }}
-        className={`flex h-7 w-7 items-center justify-center rounded-full bg-accent-gradient text-primary-foreground shadow-glow ${
+        className={`flex h-7 w-7 items-center justify-center rounded-full bg-accent-gradient text-accent-foreground shadow-glow-blue ${
           isDark ? "ml-auto" : ""
         }`}
       >
