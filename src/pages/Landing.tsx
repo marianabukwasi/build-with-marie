@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MarieAvatar } from "@/components/MarieAvatar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AuraBackground } from "@/components/AuraBackground";
+import { SiteMarquee } from "@/components/SiteMarquee";
 import { MessagesSquare, Rocket, ShieldCheck, ArrowRight, Check } from "lucide-react";
 
 const features = [
@@ -212,6 +213,32 @@ const Landing = () => {
               </motion.div>
             ))}
           </motion.div>
+        </section>
+
+        {/* Live showcase marquees */}
+        <section className="mt-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
+            className="mx-auto max-w-2xl text-center"
+          >
+            <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              Live from Marie
+            </div>
+            <h2 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
+              Sites built this week.
+            </h2>
+            <p className="mt-4 text-muted-foreground">
+              Real businesses. Real launches. All shipped through one conversation.
+            </p>
+          </motion.div>
+
+          <div className="relative -mx-4 mt-12 space-y-5 sm:-mx-8">
+            <SiteMarquee speed={55} />
+            <SiteMarquee speed={70} reverse />
+          </div>
         </section>
 
         {/* CTA */}
